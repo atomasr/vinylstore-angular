@@ -14,7 +14,8 @@ export class VinylListComponent implements OnInit {
     "genre": "pop",
     "price": 299,
     "stock": 0,
-    "bestSeller": true
+    "bestSeller": true,
+    "quantity": 0,
   },
   {
     "img": "assets/img/midnights.jpeg",
@@ -22,7 +23,8 @@ export class VinylListComponent implements OnInit {
     "genre": "pop",
     "price": 299,
     "stock": 13,
-    "bestSeller": false
+    "bestSeller": false,
+    "quantity": 0,
   },
   {
     "img": "assets/img/midnights.jpeg",
@@ -30,7 +32,8 @@ export class VinylListComponent implements OnInit {
     "genre": "pop",
     "price": 299,
     "stock": 13,
-    "bestSeller": false
+    "bestSeller": false,
+    "quantity": 0,
   },
 ]
 
@@ -39,4 +42,16 @@ export class VinylListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  upQuantity(vinyl: Vinyl): void {
+    if (vinyl.quantity < vinyl.stock) 
+      vinyl.quantity++;
+  }
+  downQuantity(vinyl: Vinyl): void {
+    if (vinyl.quantity > 0) 
+    vinyl.quantity--;
+  }
+
+  changeQuantity(event, vinyl: Vinyl): void {
+    event.target;
+  }
 }

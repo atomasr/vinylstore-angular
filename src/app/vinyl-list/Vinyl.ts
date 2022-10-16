@@ -5,4 +5,5 @@ export interface Vinyl {
     price: number;
     stock: number;
     bestSeller: boolean;
+    quantity: number;
 }
