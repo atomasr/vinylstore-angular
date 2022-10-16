@@ -10,12 +10,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+        <tr *ngFor="let vinyl of vinyls" [ngClass]="{'bestseller': vinyl.bestSeller}">
+            <td><img [src]="vinyl.img"></td>
+            <td>{{vinyl.name}}</td>
+            <td>{{vinyl.genre}}</td>
+            <td>{{vinyl.price | currency}}</td>
+            <td><span class="badge bg-warning text-dark" *ngIf="vinyl.stock==0">OUT OF STOCK</span><span *ngIf="vinyl.stock!=0">{{vinyl.stock}}</span></td>
         </tr>
     </tbody>
 </table>

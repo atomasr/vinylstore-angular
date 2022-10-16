@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Vinyl } from './Vinyl';
 
 @Component({
   selector: 'app-vinyl-list',
@@ -6,13 +7,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vinyl-list.component.scss']
 })
 export class VinylListComponent implements OnInit {
-  vinyl = {
+  vinyls: Vinyl[] = [
+    {
     "img": "assets/img/midnights.jpeg",
-    "nombre": "midnights",
-    "genero": "pop",
-    "precio": "299",
-    "stock": 13
-  }
+    "name": "midnights",
+    "genre": "pop",
+    "price": 299,
+    "stock": 0,
+    "bestSeller": true
+  },
+  {
+    "img": "assets/img/midnights.jpeg",
+    "name": "midnights",
+    "genre": "pop",
+    "price": 299,
+    "stock": 13,
+    "bestSeller": false
+  },
+  {
+    "img": "assets/img/midnights.jpeg",
+    "name": "midnights",
+    "genre": "pop",
+    "price": 299,
+    "stock": 13,
+    "bestSeller": false
+  },
+]
+
   constructor() { }
 
   ngOnInit(): void {
