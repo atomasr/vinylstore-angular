@@ -1,22 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">{{title}}</a>
+    <a class="navbar-brand" [routerLink]="['/vinyls']">{{title}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-link" href="#">Contact</a>
-            <a class="nav-link" href="#">Help</a>
+            <a class="nav-link active" [routerLink]="['/vinyls']">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" [routerLink]="['/contact']">Contact - Help</a>
+            <a class="nav-link" [routerLink]="['/guide']">Vinyl Record Guide</a>
         </div>
     </div>
 </nav>
 <div class="container">
-    <div class="row">
-        <div class="col-8">
-            <app-vinyl-list></app-vinyl-list>
-        </div>
-        <div class="col-4">Carrito de compras</div>
-    </div>
+    <router-outlet></router-outlet>
 </div>
 <footer>{{title}} 2022</footer>
