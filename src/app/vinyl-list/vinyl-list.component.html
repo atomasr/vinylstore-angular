@@ -7,6 +7,7 @@
             <th>Genero</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Quantity</th>
             <th>Buy</th>
         </tr>
     </thead>
@@ -20,6 +21,7 @@
             <td>
                 <app-input-integer [max]="vinyl.stock" [(quantity)]="vinyl.quantity" (maxReached)="maxReached($event)" *ngIf="vinyl.stock"></app-input-integer>
             </td>
+            <td><button (click)="addToCart(vinyl)">Buy</button></td>
         </tr>
     </tbody>
 </table>
