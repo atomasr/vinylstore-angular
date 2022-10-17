@@ -42,16 +42,7 @@ export class VinylListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  upQuantity(vinyl: Vinyl): void {
-    if (vinyl.quantity < vinyl.stock) 
-      vinyl.quantity++;
-  }
-  downQuantity(vinyl: Vinyl): void {
-    if (vinyl.quantity > 0) 
-    vinyl.quantity--;
-  }
-
-  changeQuantity(event, vinyl: Vinyl): void {
-    event.target;
+  maxReached(m: number) {
+    alert(m)
   }
 }

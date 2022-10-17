@@ -18,9 +18,7 @@
             <td>{{vinyl.price | currency}}</td>
             <td><span class="badge bg-warning text-dark" *ngIf="vinyl.stock==0">OUT OF STOCK</span><span *ngIf="vinyl.stock!=0">{{vinyl.stock}}</span></td>
             <td>
-                <button (click)="downQuantity(vinyl)">-</button>
-                <input type="text" [(ngModel)]="vinyl.quantity" (keyUp)="changeQuantity($event, vinyl)">
-                <button (click)="upQuantity(vinyl)">+</button>
+                <app-input-integer [max]="vinyl.stock" [(quantity)]="vinyl.quantity" (maxReached)="maxReached($event)" *ngIf="vinyl.stock"></app-input-integer>
             </td>
         </tr>
     </tbody>
