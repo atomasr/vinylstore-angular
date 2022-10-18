@@ -8,7 +8,16 @@ import { Vinyl } from './Vinyl';
   styleUrls: ['./vinyl-list.component.scss']
 })
 export class VinylListComponent implements OnInit {
-  vinyls: Vinyl[] = [
+  vinyls: Vinyl[] = [{
+    "img": "assets/img/melodrama.jpg",
+    "name": "Melodrama",
+    "author": "Lorde",
+    "genre": "Alternative/Indie",
+    "price": 26.56,
+    "stock": 9,
+    "bestSeller": false,
+    "quantity": 0,
+  },
     {
     "img": "assets/img/midnights.jpg",
     "name": "Midnights",
@@ -106,7 +115,7 @@ export class VinylListComponent implements OnInit {
     "genre": "Country/Pop",
     "price": 40.96,
     "stock": 88,
-    "bestSeller": true,
+    "bestSeller": false,
     "quantity": 0,
   },
 ]
@@ -118,7 +127,7 @@ export class VinylListComponent implements OnInit {
   }
 
   addToCart(vinyl): void {
-    if (vinyl.stock >= vinyl.quantity) {
+    if ((vinyl.stock >= vinyl.quantity)&&(vinyl.quantity > 0)) {
       this.cart.addToCart(vinyl);
       vinyl.stock -= vinyl.quantity;
     }

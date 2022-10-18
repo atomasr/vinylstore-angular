@@ -1,3 +1,24 @@
 .bestseller {
-    background-color: gold;
+    background-color: #C8DBD7;
+}
+
+.bestseller td:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+// Set border-radius on the top-right and bottom-right of the last table data on the table row
+.bestseller td:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+h1 {
+    margin: 30px;
+}
+
+table {
+    margin-bottom: 30px;
+}
+
+.bold {
+    font-weight: 700;
 }

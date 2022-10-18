@@ -1,0 +1,55 @@
+h1 {
+    padding: 30px 300px 30px 300px;
+}
+
+p {
+    padding: 10px 300px 10px 300px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    align-items: center;
+    margin-bottom: 30px;
+    text-align: left;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+label {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+label input,
+label textarea {
+    width: 200px;
+    border: 2px solid #C8DBD7;
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+button {
+    background-color: #C8DBD7;
+    padding: 15px;
+    border: 0px;
+    border-radius: 10px;
+    width: 200px;
+}
+
+button:hover {
+    background-color: #3C5556;
+    color: #F6EFE7;
+}
+
+.formSection {
+    display: flex;
+    justify-content: center;
+}

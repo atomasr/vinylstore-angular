@@ -14,7 +14,9 @@
     </thead>
     <tbody>
         <tr *ngFor="let vinyl of vinyls" [ngClass]="{'bestseller': vinyl.bestSeller}">
-            <td><img class="img-thumbnail" [src]="vinyl.img"></td>
+            <td><img width="120px" class="img-thumbnail" [src]="vinyl.img">
+                <p class="bold" *ngIf="vinyl.bestSeller">BEST-SELLER</p>
+            </td>
             <td>{{vinyl.name}}</td>
             <td>{{vinyl.author}}</td>
             <td>{{vinyl.genre}}</td>

@@ -1,6 +1,7 @@
-<h2>Shopping cart</h2>
+<h1>Shopping cart</h1>
 <ul>
     <li *ngFor="let vinyl of cartList$ | async">
-        {{vinyl.name}}: {{vinyl.quantity}};
+        <img width="100px" class="img-thumbnail" src="{{vinyl.img}}">
+        <p>You added {{vinyl.quantity}} copies of the album called {{vinyl.name}} to the cart.</p>
     </li>
 </ul>

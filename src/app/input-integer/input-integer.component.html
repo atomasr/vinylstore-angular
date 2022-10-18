@@ -1,3 +1,3 @@
-<button class="btn btn-dark btn-sm" (click)="downQuantity()">-</button>
+<button class="leftButton" (click)="downQuantity()">-</button>
 <input type="number" min="0" [(ngModel)]="quantity" (keyup)="changeQuantity($event)">
-<button class="btn btn-dark btn-sm" (click)="upQuantity()">+</button>
+<button class="rightButton" (click)="upQuantity()">+</button>
