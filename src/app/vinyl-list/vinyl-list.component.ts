@@ -125,7 +125,7 @@ export class VinylListComponent implements OnInit {
     vinyl.quantity = 0;
   }
 
-  maxReached(m: number) {
+  maxReached(m: string) {
     alert(m)
   }
 }

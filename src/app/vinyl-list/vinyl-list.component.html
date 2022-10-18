@@ -9,7 +9,7 @@
             <th>Price</th>
             <th>Stock</th>
             <th>Quantity</th>
-            <th>Buy</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -21,7 +21,8 @@
             <td>{{vinyl.price | currency}}</td>
             <td><span class="badge bg-warning text-dark" *ngIf="vinyl.stock==0">OUT OF STOCK</span><span *ngIf="vinyl.stock!=0">{{vinyl.stock}}</span></td>
             <td>
-                <app-input-integer [max]="vinyl.stock" [(quantity)]="vinyl.quantity" (maxReached)="maxReached($event)" *ngIf="vinyl.stock"></app-input-integer>
+                <app-input-integer [max]="vinyl.stock" [(quantity)]="vinyl.quantity" *ngIf="vinyl.stock"></app-input-integer>
+                <p *ngIf="vinyl.quantity>=vinyl.stock">You already reached the maximum available ({{vinyl.stock}}).</p>
             </td>
             <td><button class="btn btn-outline-success" (click)="addToCart(vinyl)">Buy</button></td>
         </tr>
