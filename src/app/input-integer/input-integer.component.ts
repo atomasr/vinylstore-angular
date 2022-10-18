@@ -40,8 +40,8 @@ export class InputIntegerComponent implements OnInit {
     }
   }
 
-  changeQuantity(event): void {
-    event.target;
+  changeQuantity(event: any): void {
+    console.log(event.target.value);
     this.quantityChange.emit(this.quantity);
   }
 }

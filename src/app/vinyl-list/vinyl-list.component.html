@@ -1,11 +1,12 @@
-<h1>Lista de vinilos</h1>
+<h1>Vinyls List</h1>
 <table class="table">
     <thead>
         <tr>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Genero</th>
-            <th>Precio</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Price</th>
             <th>Stock</th>
             <th>Quantity</th>
             <th>Buy</th>
@@ -13,15 +14,16 @@
     </thead>
     <tbody>
         <tr *ngFor="let vinyl of vinyls" [ngClass]="{'bestseller': vinyl.bestSeller}">
-            <td><img [src]="vinyl.img"></td>
+            <td><img class="img-thumbnail" [src]="vinyl.img"></td>
             <td>{{vinyl.name}}</td>
+            <td>{{vinyl.author}}</td>
             <td>{{vinyl.genre}}</td>
             <td>{{vinyl.price | currency}}</td>
             <td><span class="badge bg-warning text-dark" *ngIf="vinyl.stock==0">OUT OF STOCK</span><span *ngIf="vinyl.stock!=0">{{vinyl.stock}}</span></td>
             <td>
                 <app-input-integer [max]="vinyl.stock" [(quantity)]="vinyl.quantity" (maxReached)="maxReached($event)" *ngIf="vinyl.stock"></app-input-integer>
             </td>
-            <td><button (click)="addToCart(vinyl)">Buy</button></td>
+            <td><button class="btn btn-outline-success" (click)="addToCart(vinyl)">Buy</button></td>
         </tr>
     </tbody>
 </table>
