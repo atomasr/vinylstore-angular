@@ -1,5 +1,12 @@
 <h1>Shopping cart</h1>
 <ul>
+    <ng-container *ngIf="(cartList$ | async) as result1">
+        <div *ngIf="result1.length == 0">
+            <h2>Your cart is empty...</h2>
+            <p>Looks like you have not added anything to your cart. Go ahead & explore our vinyls.</p>
+            <b>If you leave the home section you will lose your added items.</b>
+        </div>
+    </ng-container>
     <li *ngFor="let vinyl of cartList$ | async">
         <img width="100px" class="img-thumbnail" src="{{vinyl.img}}">
         <p>You added {{vinyl.quantity}} copies of the album called {{vinyl.name}} to the cart.</p>
