@@ -54,7 +54,7 @@ export class VinylListComponent implements OnInit {
     "author": "The Beatles",
     "genre": "Alternative/Indie",
     "price": 39.43,
-    "stock": 38,
+    "stock": 0,
     "bestSeller": false,
     "quantity": 0,
   },
@@ -132,9 +132,5 @@ export class VinylListComponent implements OnInit {
       vinyl.stock -= vinyl.quantity;
     }
     vinyl.quantity = 0;
-  }
-
-  maxReached(m: string) {
-    alert(m)
   }
 }

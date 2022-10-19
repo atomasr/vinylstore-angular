@@ -29,8 +29,6 @@ export class InputIntegerComponent implements OnInit {
     if (this.quantity < this.max) {
       this.quantity++;
       this.quantityChange.emit(this.quantity);
-    } else {
-      this.maxReached.emit("You already reached the maximum available (" + this.max + ").");
     }
   }
   downQuantity(): void {
@@ -41,7 +39,6 @@ export class InputIntegerComponent implements OnInit {
   }
 
   changeQuantity(event: any): void {
-    console.log(event.target.value);
     this.quantityChange.emit(this.quantity);
   }
 }
