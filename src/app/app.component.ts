@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { VinylCartService } from './vinyl-cart.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Vinyl Store';
+
+  constructor(private cart: VinylCartService) {
+  }
+
+  cleanCart(): void {
+      this.cart.cleanCart();
+  }
 }

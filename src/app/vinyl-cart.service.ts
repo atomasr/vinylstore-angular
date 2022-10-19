@@ -14,7 +14,7 @@ export class VinylCartService {
   
   constructor() { }
   
-  addToCart(vinyl: Vinyl) {
+  addToCart(vinyl: Vinyl):void {
     let item = this._cartList.find((v1) => v1.name == vinyl.name)
     if (!item) {
       this._cartList.push({...vinyl});
@@ -22,6 +22,12 @@ export class VinylCartService {
       item.quantity += vinyl.quantity;
     }
     this.cartList.next(this._cartList);
+  }
+
+  cleanCart():void {
+    while (this._cartList.length > 0) {
+      this._cartList.pop();
+    }
   }
 
 }

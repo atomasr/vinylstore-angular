@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { VinylstoreContactComponent } from './vinylstore-contact/vinylstore-contact.component';
 import { VinylstoreGuideComponent } from './vinylstore-guide/vinylstore-guide.component';
 import { CartComponent } from './cart/cart.component';
-import { VinylstoreVinylsComponent } from './vinylstore-vinyls/vinylstore-vinyls.component';
+import { VinylstoreVinylsComponent } from './vinylstore-home/vinylstore-home.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component'
 
 @NgModule({

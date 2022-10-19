@@ -27,3 +27,15 @@ footer {
     background-color: #F6EFE7;
     text-align: center;
 }
+
+ul li:nth-child(3) {
+    margin-right: 20px;
+}
+
+footer img {
+    filter: invert(48%) sepia(9%) saturate(431%) hue-rotate(167deg) brightness(92%) contrast(88%);
+}
+
+footer span {
+    margin-left: 20px;
+}
