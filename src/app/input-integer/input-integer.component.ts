@@ -19,9 +19,6 @@ export class InputIntegerComponent implements OnInit {
   @Output()
   quantityChange: EventEmitter<number> = new EventEmitter<number>();
 
-  @Output()
-  maxReached: EventEmitter<string> = new EventEmitter<string>();
-
   ngOnInit(): void {
   }
 
