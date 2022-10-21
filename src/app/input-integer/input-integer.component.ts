@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Vinyl } from '../vinyl-list/Vinyl';
 
 @Component({
   selector: 'app-input-integer',

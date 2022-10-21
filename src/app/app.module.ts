@@ -10,7 +10,8 @@ import { VinylstoreContactComponent } from './vinylstore-contact/vinylstore-cont
 import { VinylstoreGuideComponent } from './vinylstore-guide/vinylstore-guide.component';
 import { CartComponent } from './cart/cart.component';
 import { VinylstoreVinylsComponent } from './vinylstore-home/vinylstore-home.component';
-import { InputIntegerComponent } from './input-integer/input-integer.component'
+import { InputIntegerComponent } from './input-integer/input-integer.component';
+import { LikeButtonComponent } from './like-button/like-button.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { InputIntegerComponent } from './input-integer/input-integer.component'
     VinylstoreGuideComponent,
     CartComponent,
     VinylstoreVinylsComponent,
-    InputIntegerComponent
+    InputIntegerComponent,
+    LikeButtonComponent
   ],
   imports: [
     BrowserModule,

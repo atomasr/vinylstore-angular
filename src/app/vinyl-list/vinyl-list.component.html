@@ -10,6 +10,7 @@
             <th>Stock</th>
             <th>Quantity</th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +26,9 @@
             <td>
                 <app-input-integer [max]="vinyl.stock" [(quantity)]="vinyl.quantity" *ngIf="vinyl.stock"></app-input-integer>
                 <p *ngIf="vinyl.quantity>=vinyl.stock">You already reached the maximum available ({{vinyl.stock}}).</p>
+            </td>
+            <td>
+                <app-like-button [img]="vinyl.img" [name]="vinyl.name"></app-like-button>
             </td>
             <td>
                 <button (click)="addToCart(vinyl)">Buy</button>

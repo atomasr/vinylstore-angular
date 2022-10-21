@@ -1,0 +1,12 @@
+.iconHeart {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    cursor: pointer;
+}
+
+.vectorHeart {
+    width: 31px;
+    height: 31px;
+    filter: invert(32%) sepia(11%) saturate(839%) hue-rotate(134deg) brightness(93%) contrast(98%);
+}

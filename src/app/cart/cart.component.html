@@ -11,9 +11,19 @@
         <img width="100px" class="img-thumbnail" src="{{vinyl.img}}">
         <p>You added {{vinyl.quantity}} copies of the album called {{vinyl.name}} to the cart.</p>
     </li>
-    <ng-container *ngIf="(cartList$ | async) as result">
-        <div *ngIf="result.length > 0">
+    <ng-container *ngIf="(cartList$ | async) as result2">
+        <div *ngIf="result2.length > 0">
             <button>Buy</button>
         </div>
     </ng-container>
+    <ng-container *ngIf="(likesList$ | async) as result3">
+        <h1 class="titleLike">Your likes</h1>
+        <div *ngIf="result3.length == 0">
+            <p>In this list you can add the vinyls that interest you the most.</p>
+        </div>
+    </ng-container>
+    <li *ngFor="let vinyl of likesList$ | async">
+        <img width="100px" class="img-thumbnail" src="{{vinyl.img}}">
+        <p>You liked the album called {{vinyl.name}}.</p>
+    </li>
 </ul>

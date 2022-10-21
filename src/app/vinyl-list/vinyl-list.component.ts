@@ -133,4 +133,5 @@ export class VinylListComponent implements OnInit {
     }
     vinyl.quantity = 0;
   }
+
 }
