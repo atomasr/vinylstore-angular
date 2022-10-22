@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Like } from '../like-button/Like';
 import { VinylCartService } from '../vinyl-cart.service';
@@ -13,13 +13,20 @@ export class CartComponent implements OnInit {
   
   cartList$: Observable<Vinyl[]>;
   likesList$: Observable<Like[]>;
+  totalPrice$: Observable<number>;
   
   constructor(private cart: VinylCartService) {
     this.cartList$ = cart.cartList.asObservable();
     this.likesList$ = cart.likesList.asObservable();
+    this.totalPrice$ = cart.totalPrice.asObservable();
   }
 
   ngOnInit(): void {
   }
-  
+
+  removeFromCart(vinyl: Vinyl):void {
+    this.cart.removeFromCart(vinyl);
+    this.cart.updateTotalPrice();
+  }
+
 }

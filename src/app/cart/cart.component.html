@@ -10,9 +10,11 @@
     <li *ngFor="let vinyl of cartList$ | async">
         <img width="100px" class="img-thumbnail" src="{{vinyl.img}}">
         <p>You added {{vinyl.quantity}} copies of the album called {{vinyl.name}} to the cart.</p>
+        <button class="deleteButton" (click)="removeFromCart(vinyl)">Delete</button>
     </li>
     <ng-container *ngIf="(cartList$ | async) as result2">
         <div *ngIf="result2.length > 0">
+            <span>Total: <b>{{totalPrice$ | async | currency}} </b> </span>
             <button>Buy</button>
         </div>
     </ng-container>

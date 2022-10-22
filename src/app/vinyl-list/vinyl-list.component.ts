@@ -129,6 +129,7 @@ export class VinylListComponent implements OnInit {
   addToCart(vinyl): void {
     if ((vinyl.stock >= vinyl.quantity)&&(vinyl.quantity > 0)) {
       this.cart.addToCart(vinyl);
+      this.cart.updateTotalPrice();
       vinyl.stock -= vinyl.quantity;
     }
     vinyl.quantity = 0;

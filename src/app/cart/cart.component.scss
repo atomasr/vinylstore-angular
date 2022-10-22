@@ -12,6 +12,7 @@ button {
     padding: 10px 25px 10px 25px;
     border: 0px;
     border-radius: 10px;
+    margin-bottom: 24px;
 }
 
 button:hover {
@@ -19,8 +20,19 @@ button:hover {
     color: #F6EFE7;
 }
 
+.deleteButton {
+    background-color: #E09789;
+    padding: 5px 15px 5px 15px;
+}
+
+.deleteButton:hover {
+    background-color: #F5D4C3;
+    color: #3C5556;
+}
+
 p {
     padding: 10px 60px 10px 60px;
+    margin: 0;
 }
 
 .titleLike {
