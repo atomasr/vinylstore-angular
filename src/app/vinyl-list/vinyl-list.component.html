@@ -32,7 +32,7 @@
                 <app-like-button [img]="vinyl.img" [name]="vinyl.name"></app-like-button>
             </td>
             <td>
-                <button (click)="addToCart(vinyl)">Buy</button>
+                <button (click)="addToCart(vinyl)" *ngIf="vinyl.stock!=0">Buy</button>
             </td>
             <td>
                 <button *ngIf="vinyl.quantityCart!=0" class="deleteButton" (click)="removeFromCart(vinyl)">Delete</button>
