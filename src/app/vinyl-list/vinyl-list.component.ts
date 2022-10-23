@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ApplicationRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { VinylCartService } from '../vinyl-cart.service';
 import { Vinyl } from './Vinyl';
 
@@ -8,7 +9,7 @@ import { Vinyl } from './Vinyl';
   styleUrls: ['./vinyl-list.component.scss']
 })
 export class VinylListComponent implements OnInit {
-  vinyls: Vinyl[] = [{
+  vinylsList: Vinyl[] = [{
     "img": "assets/img/melodrama.jpg",
     "name": "Melodrama",
     "author": "Lorde",
@@ -17,6 +18,8 @@ export class VinylListComponent implements OnInit {
     "stock": 9,
     "bestSeller": false,
     "quantity": 0,
+    "quantityCart": 0,
+    "liked": false,
   },
   {
     "img": "assets/img/darkside.jpg",
@@ -27,6 +30,8 @@ export class VinylListComponent implements OnInit {
     "stock": 18,
     "bestSeller": true,
     "quantity": 0,
+    "quantityCart": 0,
+    "liked": false,
   },
   {
     "img": "assets/img/acdc.jpg",
@@ -37,6 +42,8 @@ export class VinylListComponent implements OnInit {
     "stock": 180,
     "bestSeller": false,
     "quantity": 0,
+    "quantityCart": 0,
+    "liked": false,
   },
   {
   "img": "assets/img/midnights.jpg",
@@ -47,6 +54,8 @@ export class VinylListComponent implements OnInit {
   "stock": 222,
   "bestSeller": true,
   "quantity": 0,
+  "quantityCart": 0,
+  "liked": false,
   },
   {
     "img": "assets/img/25.jpg",
@@ -57,6 +66,8 @@ export class VinylListComponent implements OnInit {
     "stock": 86,
     "bestSeller": false,
     "quantity": 0,
+    "quantityCart": 0,
+    "liked": false,
   },
   {
     "img": "assets/img/abbeyroad.jpg",
@@ -67,6 +78,8 @@ export class VinylListComponent implements OnInit {
     "stock": 0,
     "bestSeller": false,
     "quantity": 0,
+    "quantityCart": 0,
+    "liked": false,
   },
   {
     "img": "assets/img/am.jpg",
@@ -77,6 +90,8 @@ export class VinylListComponent implements OnInit {
     "stock": 72,
     "bestSeller": false,
     "quantity": 0,
+    "quantityCart": 0,
+    "liked": false,
   },
   {
     "img": "assets/img/legend.jpg",
@@ -87,6 +102,8 @@ export class VinylListComponent implements OnInit {
     "stock": 77,
     "bestSeller": false,
     "quantity": 0,
+    "quantityCart": 0,
+    "liked": false,
   },
   {
     "img": "assets/img/harry.jpg",
@@ -97,6 +114,8 @@ export class VinylListComponent implements OnInit {
     "stock": 81,
     "bestSeller": true,
     "quantity": 0,
+    "quantityCart": 0,
+    "liked": false,
   },
   {
     "img": "assets/img/hozier.jpg",
@@ -107,6 +126,8 @@ export class VinylListComponent implements OnInit {
     "stock": 30,
     "bestSeller": false,
     "quantity": 0,
+    "quantityCart": 0,
+    "liked": false,
   },
   {
     "img": "assets/img/red.jpg",
@@ -117,6 +138,8 @@ export class VinylListComponent implements OnInit {
     "stock": 88,
     "bestSeller": false,
     "quantity": 0,
+    "quantityCart": 0,
+    "liked": false,
   },
 ]
 
@@ -131,8 +154,21 @@ export class VinylListComponent implements OnInit {
       this.cart.addToCart(vinyl);
       this.cart.updateTotalPrice();
       vinyl.stock -= vinyl.quantity;
+      vinyl.quantityCart += vinyl.quantity;
     }
     vinyl.quantity = 0;
+  }
+
+
+  removeFromCart(vinyl: Vinyl): void {
+    this.cart.removeFromCart(vinyl);
+    this.cart.updateTotalPrice();
+    vinyl.stock += vinyl.quantityCart;
+    vinyl.quantityCart = 0;
+  }
+
+  setLiked(vinyl: Vinyl): void {
+    vinyl.liked = !vinyl.liked;
   }
 
 }

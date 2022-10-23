@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Like } from '../like-button/Like';
 import { VinylCartService } from '../vinyl-cart.service';
 import { Vinyl } from '../vinyl-list/Vinyl';
+import { VinylListComponent } from '../vinyl-list/vinyl-list.component';
 
 @Component({
   selector: 'app-cart',
@@ -22,11 +23,6 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  removeFromCart(vinyl: Vinyl):void {
-    this.cart.removeFromCart(vinyl);
-    this.cart.updateTotalPrice();
   }
 
 }

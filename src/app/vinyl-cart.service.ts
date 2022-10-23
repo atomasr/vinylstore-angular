@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Like } from './like-button/Like';
 import { Vinyl } from './vinyl-list/Vinyl';
+import { VinylListComponent } from './vinyl-list/vinyl-list.component';
 
 @Injectable({
   providedIn: 'root'
@@ -35,13 +36,8 @@ export class VinylCartService {
     const index = this._cartList.indexOf(item!);
     if (index > -1) { // only splice array when item is found
       this._cartList.splice(index, 1); // 2nd parameter means remove one item only
-      this.updateVinylList();
     }
     this.cartList.next(this._cartList);
-  }
-
-  updateVinylList():void {
-
   }
 
   updateTotalPrice():void {

@@ -29,7 +29,7 @@ import { LikeButtonComponent } from './like-button/like-button.component'
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [VinylListComponent,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

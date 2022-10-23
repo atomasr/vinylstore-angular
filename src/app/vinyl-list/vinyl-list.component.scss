@@ -40,6 +40,15 @@ button:hover {
     color: #F6EFE7;
 }
 
+.deleteButton {
+    background-color: #E09789;
+    border: 3px solid #996054;
+}
+
+.deleteButton:hover {
+    background-color: #996054;
+}
+
 .outStock {
     color: #F1B24A;
     font-weight: 600;
