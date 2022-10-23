@@ -12,7 +12,7 @@ import { VinylListComponent } from './vinyl-list/vinyl-list.component';
 export class VinylCartService {
 
   private _cartList: Vinyl[] = [];
-  private _likesList: Like[] = [];
+  public _likesList: Like[] = [];
   private _totalPrice: number = 0;
 
   cartList: BehaviorSubject<Vinyl[]> = new BehaviorSubject(this._cartList);

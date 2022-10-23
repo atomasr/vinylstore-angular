@@ -27,6 +27,7 @@ export class LikeButtonComponent implements OnInit {
   srcChange: EventEmitter<string> = new EventEmitter<string>();
   
   ngOnInit(): void {
+    this.start();
   }
 
 
@@ -51,5 +52,14 @@ export class LikeButtonComponent implements OnInit {
     const vinyl: Like = { img: this.img, name: this.name };
     this.likes.removeFromLikes(vinyl);
   }
-        
+
+  start() {
+    for (let index = 0; index < this.likes._likesList.length; index++) {
+      if (this.likes._likesList[index].name == this.name) {
+        this.src = 'assets/img/heart-solid.svg';
+        this.srcChange.emit(this.src);
+      }
+    }
+  }
+
 }

@@ -29,7 +29,7 @@
                 <p *ngIf="vinyl.quantity>=vinyl.stock">You already reached the maximum available ({{vinyl.stock}}).</p>
             </td>
             <td>
-                <app-like-button (click)="setLiked(vinyl)" [img]="vinyl.img" [name]="vinyl.name"></app-like-button>
+                <app-like-button [img]="vinyl.img" [name]="vinyl.name"></app-like-button>
             </td>
             <td>
                 <button (click)="addToCart(vinyl)">Buy</button>

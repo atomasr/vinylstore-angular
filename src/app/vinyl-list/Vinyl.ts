@@ -8,5 +8,4 @@ export interface Vinyl {
     bestSeller: boolean;
     quantity: number;
     quantityCart: number;
-    liked: boolean;
 }
