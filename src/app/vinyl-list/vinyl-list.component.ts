@@ -1,6 +1,4 @@
-import { ApplicationRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { Like } from '../like-button/Like';
+import { Component, OnInit } from '@angular/core';
 import { VinylCartService } from '../vinyl-cart.service';
 import { Vinyl } from './Vinyl';
 
@@ -140,7 +138,7 @@ export class VinylListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addToCart(vinyl): void {
+  addToCart(vinyl: Vinyl): void {
     if ((vinyl.stock >= vinyl.quantity)&&(vinyl.quantity > 0)) {
       this.cart.addToCart(vinyl);
       this.cart.updateTotalPrice();
@@ -151,7 +149,7 @@ export class VinylListComponent implements OnInit {
   }
 
 
-  removeFromCart(vinyl): void {
+  removeFromCart(vinyl: Vinyl): void {
     this.cart.removeFromCart(vinyl);
     this.cart.updateTotalPrice();
     vinyl.stock += vinyl.quantityCart;

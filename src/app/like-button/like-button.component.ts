@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { VinylCartService } from '../vinyl-cart.service';
 
 import { Like } from '../like-button/Like';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-like-button',
